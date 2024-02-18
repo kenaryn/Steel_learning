@@ -43,8 +43,16 @@ not a expression which evaluates to a pair.
 
 ### Let expressions and variables
 
-(let ([var expr] ...) body ...) Useful to simplify an expression that would contain two identical or more 
+- **(let ([var expr] ...) body ...)** Useful to simplify an expression that would contain two identical or more 
 subexpressions and avoid computing that common subexpression more than one.
+
+- `Let` is merely a direct application of a `λ` to a set of args expression.
+
+
+### Lambda / fn / λ
+
+**((λ (var ...) body) (expr ...))**
+
 
 
 ##################### personal inquiry
