@@ -22,6 +22,7 @@ It allows Scheme programs to be represented as Scheme data.
 - List: a sequence of pairs. Each pair's cdr is the next pair in the sequence.
 - Constant object: the object itself is the value.
 - Scope: region where a variable binding is visible.
+- Primitive procedure: top-level definition accessible outside of any `let` or `λ` expressions. Use `define` to create one.
 
 ### Notation
 
@@ -53,7 +54,13 @@ subexpressions and avoid computing that common subexpression more than one.
 
 **((λ (var ...) body) (expr ...))**
 
+### Imports: require / load
 
+- `(require "<file>")` loads the file as a module and creates a new namespace in the process.
+Add `(provide <sequence_of_symbols_to_export>)` at the very beginning of a file to turn it into a module.
+
+- `:load <file>` acts differently. This command parses and evaluates the whole file, causing all symbols to be from now
+on visible in the current REPL session.
 
 ##################### personal inquiry
 I face some difficulties to grasp the let expression. Please how could I re-use it to (for example), display its object's evaluation?

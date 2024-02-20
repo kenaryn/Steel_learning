@@ -44,3 +44,9 @@
 
 (dbg! (abs-7 -3))
 (dbg! (abs-7 3))
+
+;; result is #false if n is zero; / 1 n otherwise.
+(defn reciprocal
+  (λ (n)
+    (and (not (= n 0))
+      (/ 1 n))))
